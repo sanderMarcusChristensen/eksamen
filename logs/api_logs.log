@@ -1,0 +1,17 @@
+17:44:01.762 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:01.765 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:19.486 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:19.488 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:29.808 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[admin, user])
+17:44:29.810 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[admin, user])
+10:50:31.295 [JettyServerThreadPool-52] WARN  dat.config.ApplicationConfig - An API exception occurred: Code: 400, Message: User with username: usertest already exists
+10:53:29.200 [JettyServerThreadPool-52] WARN  dat.config.ApplicationConfig - An API exception occurred: Code: 400, Message: User with username: UserSander already exists
+10:54:31.148 [JettyServerThreadPool-52] WARN  dat.config.ApplicationConfig - An API exception occurred: Code: 400, Message: User with username: UserSander already exists
+10:56:45.276 [JettyServerThreadPool-23] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+10:56:45.279 [JettyServerThreadPool-23] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+13:51:22.291 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:22.294 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:28.150 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:28.152 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:37.719 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[admin, user])
+13:51:37.720 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[admin, user])

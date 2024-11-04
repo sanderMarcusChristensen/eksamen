@@ -1,0 +1,298 @@
+2024-10-31 16:59:59 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 16:59:59 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:00:55 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:00:55 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:00:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:00:56 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@620aa4ea
+2024-10-31 17:00:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:00:57 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:00:59 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:00:59 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:00:59 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:00:59 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@714f1a44{/api,null,AVAILABLE}
+2024-10-31 17:00:59 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@8432469{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:00:59 [main] INFO  org.eclipse.jetty.server.Server - Started Server@1999149e{STARTING}[11.0.20,sto=0] @5346ms
+2024-10-31 17:00:59 [main] INFO  io.javalin.Javalin - Javalin started in 378ms \o/
+2024-10-31 17:00:59 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:00:59 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:01:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:01:49 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:01:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:01:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@411341bd
+2024-10-31 17:01:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:01:51 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:01:53 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:01:53 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:01:53 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:01:53 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5c5c7cc4{/api,null,AVAILABLE}
+2024-10-31 17:01:53 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6d0114c0{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:01:53 [main] INFO  org.eclipse.jetty.server.Server - Started Server@4276ad40{STARTING}[11.0.20,sto=0] @5415ms
+2024-10-31 17:01:53 [main] INFO  io.javalin.Javalin - Javalin started in 353ms \o/
+2024-10-31 17:01:53 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:01:53 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:02:23 [JettyServerThreadPool-21] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[user])
+2024-10-31 17:02:23 [JettyServerThreadPool-21] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[user])
+2024-10-31 17:02:27 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[user])
+2024-10-31 17:02:27 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[user])
+2024-10-31 17:02:39 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[admin, user])
+2024-10-31 17:02:39 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[admin, user])
+2024-10-31 17:15:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:15:18 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:15:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:15:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@37fbe4a8
+2024-10-31 17:15:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:15:20 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:15:22 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:15:22 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:15:22 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:15:22 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@156cfa20{/api,null,AVAILABLE}
+2024-10-31 17:15:22 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@677cc4e8{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:15:22 [main] INFO  org.eclipse.jetty.server.Server - Started Server@59b447a4{STARTING}[11.0.20,sto=0] @5042ms
+2024-10-31 17:15:22 [main] INFO  io.javalin.Javalin - Javalin started in 315ms \o/
+2024-10-31 17:15:22 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:15:22 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:15:42 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[admin, user])
+2024-10-31 17:15:42 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[admin, user])
+2024-10-31 17:15:49 [JettyServerThreadPool-23] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[admin, user])
+2024-10-31 17:15:49 [JettyServerThreadPool-23] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user1, password=null, roles=[admin, user])
+2024-10-31 17:29:22 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:29:22 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:29:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:29:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2cfbeac4
+2024-10-31 17:29:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:29:24 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:29:27 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:29:27 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:29:27 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:29:27 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@42401b81{/api,null,AVAILABLE}
+2024-10-31 17:29:27 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@2ffb0d10{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:29:27 [main] INFO  org.eclipse.jetty.server.Server - Started Server@2ecdf528{STARTING}[11.0.20,sto=0] @6443ms
+2024-10-31 17:29:27 [main] INFO  io.javalin.Javalin - Javalin started in 274ms \o/
+2024-10-31 17:29:27 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:29:27 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:29:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-31 17:29:27 [main] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2024-10-31 17:29:27 [main] INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2024-10-31 17:29:28 [main] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2024-10-31 17:29:28 [main] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2024-10-31 17:29:28 [main] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 25.0.3
+  API Version: 1.44
+  Operating System: Docker Desktop
+  Total Memory: 1967 MB
+2024-10-31 17:29:28 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Creating container for image: testcontainers/ryuk:0.4.0
+2024-10-31 17:29:28 [main] INFO  o.t.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2024-10-31 17:29:29 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 is starting: 79f22feea7e2bc8e887f89db171198674da8e474d74011a8b9b4546a0c4f6f64
+2024-10-31 17:29:29 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 started in PT1.0733234S
+2024-10-31 17:29:29 [main] INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2024-10-31 17:29:29 [main] INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2024-10-31 17:29:29 [main] INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2024-10-31 17:29:29 [main] INFO  tc.postgres:15.3-alpine3.18 - Creating container for image: postgres:15.3-alpine3.18
+2024-10-31 17:29:29 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 is starting: cbe22eb3f274e1a06044305ad91ef5956f1388bf1a3d57aa2cc92601fc509a90
+2024-10-31 17:29:32 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 started in PT3.0553841S
+2024-10-31 17:29:32 [main] INFO  tc.postgres:15.3-alpine3.18 - Container is started (JDBC URL: jdbc:postgresql://localhost:57233/test?loggerLevel=OFF)
+2024-10-31 17:29:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.testcontainers.jdbc.ConnectionWrapper@1983a4e4
+2024-10-31 17:29:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-31 17:29:32 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "user_roles" does not exist, skipping
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:29:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+2024-10-31 17:29:57 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:29:57 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:29:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:29:58 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b0b4d53
+2024-10-31 17:29:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:29:59 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:30:02 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:30:02 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:30:02 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:30:02 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@4b7ab7ab{/api,null,AVAILABLE}
+2024-10-31 17:30:02 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@191e654{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:30:02 [main] INFO  org.eclipse.jetty.server.Server - Started Server@126675fd{STARTING}[11.0.20,sto=0] @6796ms
+2024-10-31 17:30:02 [main] INFO  io.javalin.Javalin - Javalin started in 290ms \o/
+2024-10-31 17:30:02 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:30:02 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:30:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-31 17:30:02 [main] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2024-10-31 17:30:02 [main] INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2024-10-31 17:30:03 [main] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2024-10-31 17:30:03 [main] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2024-10-31 17:30:03 [main] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 25.0.3
+  API Version: 1.44
+  Operating System: Docker Desktop
+  Total Memory: 1967 MB
+2024-10-31 17:30:03 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Creating container for image: testcontainers/ryuk:0.4.0
+2024-10-31 17:30:03 [main] INFO  o.t.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2024-10-31 17:30:03 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 is starting: 979d8a20420a397a012b31a9b8d2329ebecc153e6e480ee3e3c68f845f5205ff
+2024-10-31 17:30:04 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 started in PT0.9167896S
+2024-10-31 17:30:04 [main] INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2024-10-31 17:30:04 [main] INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2024-10-31 17:30:04 [main] INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2024-10-31 17:30:04 [main] INFO  tc.postgres:15.3-alpine3.18 - Creating container for image: postgres:15.3-alpine3.18
+2024-10-31 17:30:04 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 is starting: 8e9791be2ee4632d5c3d2a45bacb54a7f37d0f456115e0b4b5fa4d31d828d927
+2024-10-31 17:30:06 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 started in PT2.4171158S
+2024-10-31 17:30:06 [main] INFO  tc.postgres:15.3-alpine3.18 - Container is started (JDBC URL: jdbc:postgresql://localhost:57269/test?loggerLevel=OFF)
+2024-10-31 17:30:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.testcontainers.jdbc.ConnectionWrapper@1983a4e4
+2024-10-31 17:30:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-31 17:30:06 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "user_roles" does not exist, skipping
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:30:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+2024-10-31 17:31:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:31:49 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:31:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:31:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2cfbeac4
+2024-10-31 17:31:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:31:50 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:31:52 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:31:52 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:31:52 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:31:52 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@42401b81{/api,null,AVAILABLE}
+2024-10-31 17:31:53 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@2ffb0d10{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:31:53 [main] INFO  org.eclipse.jetty.server.Server - Started Server@2ecdf528{STARTING}[11.0.20,sto=0] @5958ms
+2024-10-31 17:31:53 [main] INFO  io.javalin.Javalin - Javalin started in 224ms \o/
+2024-10-31 17:31:53 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:31:53 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:31:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-31 17:31:53 [main] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2024-10-31 17:31:53 [main] INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2024-10-31 17:31:53 [main] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2024-10-31 17:31:53 [main] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2024-10-31 17:31:53 [main] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 25.0.3
+  API Version: 1.44
+  Operating System: Docker Desktop
+  Total Memory: 1967 MB
+2024-10-31 17:31:53 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Creating container for image: testcontainers/ryuk:0.4.0
+2024-10-31 17:31:54 [main] INFO  o.t.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2024-10-31 17:31:54 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 is starting: a8aac891bd448121a74a8fcb3ef9cdfeded05f8199039d30d4e891d6b9c0dd68
+2024-10-31 17:31:54 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 started in PT0.9186115S
+2024-10-31 17:31:54 [main] INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2024-10-31 17:31:54 [main] INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2024-10-31 17:31:54 [main] INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2024-10-31 17:31:54 [main] INFO  tc.postgres:15.3-alpine3.18 - Creating container for image: postgres:15.3-alpine3.18
+2024-10-31 17:31:54 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 is starting: 68cb0878a8e31b7332740165b71b94b4b5ad862b2cc5d13e83e51e9947d53626
+2024-10-31 17:31:57 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 started in PT2.3882488S
+2024-10-31 17:31:57 [main] INFO  tc.postgres:15.3-alpine3.18 - Container is started (JDBC URL: jdbc:postgresql://localhost:57305/test?loggerLevel=OFF)
+2024-10-31 17:31:57 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.testcontainers.jdbc.ConnectionWrapper@1983a4e4
+2024-10-31 17:31:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-31 17:31:57 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "user_roles" does not exist, skipping
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:31:57 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+2024-10-31 17:32:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:32:36 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:32:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:32:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@425d5d46
+2024-10-31 17:32:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:32:37 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:32:40 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:32:40 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:32:40 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:32:40 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@44ddb518{/api,null,AVAILABLE}
+2024-10-31 17:32:40 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@402a69f{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:32:40 [main] INFO  org.eclipse.jetty.server.Server - Started Server@123ca460{STARTING}[11.0.20,sto=0] @6161ms
+2024-10-31 17:32:40 [main] INFO  io.javalin.Javalin - Javalin started in 268ms \o/
+2024-10-31 17:32:40 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:32:40 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:32:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-31 17:32:40 [main] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2024-10-31 17:32:40 [main] INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2024-10-31 17:32:41 [main] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2024-10-31 17:32:41 [main] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2024-10-31 17:32:41 [main] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 25.0.3
+  API Version: 1.44
+  Operating System: Docker Desktop
+  Total Memory: 1967 MB
+2024-10-31 17:32:41 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Creating container for image: testcontainers/ryuk:0.4.0
+2024-10-31 17:32:41 [main] INFO  o.t.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2024-10-31 17:32:41 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 is starting: 3eaedf14321eb7d8f5486cbfc61b926e3cf1eb606e7abb5c4ef6622b0436164f
+2024-10-31 17:32:42 [main] INFO  tc.testcontainers/ryuk:0.4.0 - Container testcontainers/ryuk:0.4.0 started in PT0.9307521S
+2024-10-31 17:32:42 [main] INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2024-10-31 17:32:42 [main] INFO  o.testcontainers.DockerClientFactory - Checking the system...
+2024-10-31 17:32:42 [main] INFO  o.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2024-10-31 17:32:42 [main] INFO  tc.postgres:15.3-alpine3.18 - Creating container for image: postgres:15.3-alpine3.18
+2024-10-31 17:32:42 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 is starting: 0fd662e5c7842a345bd1f20deeaac68553b68cd6fda2f5aa82d30a4c231c364d
+2024-10-31 17:32:44 [main] INFO  tc.postgres:15.3-alpine3.18 - Container postgres:15.3-alpine3.18 started in PT2.3514181S
+2024-10-31 17:32:44 [main] INFO  tc.postgres:15.3-alpine3.18 - Container is started (JDBC URL: jdbc:postgresql://localhost:57335/test?loggerLevel=OFF)
+2024-10-31 17:32:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.testcontainers.jdbc.ConnectionWrapper@1983a4e4
+2024-10-31 17:32:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-31 17:32:44 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "user_roles" does not exist, skipping
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "user_roles" does not exist, skipping
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2024-10-31 17:32:44 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+2024-10-31 17:34:40 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:34:40 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:34:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:34:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@411341bd
+2024-10-31 17:34:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:34:42 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:34:44 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:34:44 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:34:44 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:34:44 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5c5c7cc4{/api,null,AVAILABLE}
+2024-10-31 17:34:44 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6d0114c0{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:34:44 [main] INFO  org.eclipse.jetty.server.Server - Started Server@4276ad40{STARTING}[11.0.20,sto=0] @5003ms
+2024-10-31 17:34:44 [main] INFO  io.javalin.Javalin - Javalin started in 314ms \o/
+2024-10-31 17:34:44 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:34:44 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:36:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:36:52 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:36:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:36:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11841b15
+2024-10-31 17:36:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:36:53 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:36:56 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:36:56 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:36:56 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:36:56 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@70d687b8{/api,null,AVAILABLE}
+2024-10-31 17:36:56 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6de84336{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:36:56 [main] INFO  org.eclipse.jetty.server.Server - Started Server@652b3733{STARTING}[11.0.20,sto=0] @6155ms
+2024-10-31 17:36:56 [main] INFO  io.javalin.Javalin - Javalin started in 293ms \o/
+2024-10-31 17:36:56 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:36:56 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
+2024-10-31 17:37:10 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.4.Final
+2024-10-31 17:37:10 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-31 17:37:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-31 17:37:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@425d5d46
+2024-10-31 17:37:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-31 17:37:12 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-10-31 17:37:14 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2024-10-31 17:37:14 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.20; built: 2024-01-29T21:04:22.394Z; git: 922f8dc188f7011e60d0361de585fd4ac4d63064; jvm 17.0.12+7-LTS
+2024-10-31 17:37:15 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2024-10-31 17:37:15 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@44ddb518{/api,null,AVAILABLE}
+2024-10-31 17:37:15 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@402a69f{HTTP/1.1, (http/1.1)}{0.0.0.0:7007}
+2024-10-31 17:37:15 [main] INFO  org.eclipse.jetty.server.Server - Started Server@123ca460{STARTING}[11.0.20,sto=0] @6160ms
+2024-10-31 17:37:15 [main] INFO  io.javalin.Javalin - Javalin started in 265ms \o/
+2024-10-31 17:37:15 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7007/api
+2024-10-31 17:37:15 [main] INFO  io.javalin.Javalin - You are running Javalin 6.1.3 (released March 2, 2024. Your Javalin version is 242 days old. Consider checking for a newer version.).
