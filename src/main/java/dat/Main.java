@@ -9,11 +9,13 @@ import jakarta.persistence.EntityManagerFactory;
 public class Main {
     public static void main(String[] args) {
 
-        //Populate.main(args);
+        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+        Populate populator = new Populate(emf);
+
+
         ApplicationConfig.startServer(ApiProperties.PORT);
+        populator.populate();
 
-
-        // husk at sætte entites i hiberNateconfig
 
         // sæt hibernate til når du laver routes og dao
     }

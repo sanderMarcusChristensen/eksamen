@@ -48,3 +48,82 @@ Authorization: Bearer {{jwt_token}}
 # huske at sætte :
 #Accept: application/json
 #Authorization: Bearer {{jwt_token}}, på all endpoints der har security på
+
+GET localhost:7007/api/trip
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
+
+GET localhost:7007/api/trip/0
+
+###
+
+POST http://localhost:7007/api/trip
+Content-Type: application/json
+
+{
+  "id": 1,
+  "startTime": [
+    2024,
+    11,
+    4
+  ],
+  "endTime": [
+    2024,
+    12,
+    1
+  ],
+  "startPosition": "KBH H",
+  "name": "Japan",
+  "price": 25000,
+  "category": "CITY",
+  "guide":{}
+
+  }
+
+
+###
+
+PUT localhost:7007/api/trip/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "id": 1,
+  "startTime": [
+    2024,
+    11,
+    4
+  ],
+  "endTime": [
+    2024,
+    12,
+    1
+  ],
+  "startPosition": "KBH H",
+  "name": "Japan",
+  "price": 25000,
+  "category": "CITY",
+  "guide": {
+    "id": 1,
+    "firstName": "Sander",
+    "lastName": "Jens",
+    "email": "thisMail@Gmailcom",
+    "phone": 0,
+    "yearsOfExperience": 0,
+    "trips": []
+  }
+}
+
+###
+
+DELETE localhost:7007/api/trip/0
+
+###
+
+PUT localhost:7007/api/trip/3/guides/1
+
+
+

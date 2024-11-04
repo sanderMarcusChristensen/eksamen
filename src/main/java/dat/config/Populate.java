@@ -30,64 +30,57 @@ public class Populate {
     public void populate() {
 
         start1 = LocalDate.now();
-        start2 = LocalDate.of(2024,11,16);
-        start3 = LocalDate.of(2024,12,15);
-        start4 = LocalDate.of(2025,1,1);
+        start2 = LocalDate.of(2024, 11, 16);
+        start3 = LocalDate.of(2024, 12, 15);
+        start4 = LocalDate.of(2025, 1, 1);
 
-        end1 = LocalDate.of(2024,12,1);
-        end2 = LocalDate.of(2025,1,1);
-        end3 = LocalDate.of(2025,2,5);
-        end1 = LocalDate.of(2025,1,14);
+        end1 = LocalDate.of(2024, 12, 1);
+        end2 = LocalDate.of(2025, 1, 1);
+        end3 = LocalDate.of(2025, 2, 5);
+        end4 = LocalDate.of(2025, 1, 14);
 
-        List<Trip> g1Trips = new ArrayList<>();
+        // Initialize Guide
+        g1 = new Guide(null, "Sander", "Christensen", "Email@gmail.com", 55667788, 3, new ArrayList<>());
+        g2 = new Guide(null, "Jon", "Doe", "Email@gmail.com", 11223344, 5, new ArrayList<>());
 
-        g1 = new Guide(null,"Sander", "Christensen","Email@gamil.com",55667788, 3,g1Trips );
+        // Initialize Trip
+        t1 = new Trip(null, start1, end1, "KBH H", "Japan", 25000, Category.CITY, g1);
+        t2 = new Trip(null, start2, end2, "Billund Lufthavn", "Australian", 27999, Category.FOREST, g1);
+        t3 = new Trip(null, start3, end3, "Roskilde Lufthavn", "Bali", 21999, Category.BEACH, g2);
+        t4 = new Trip(null, start4, end4, "KBH H", "Gili-T", 24999, Category.SEA, g2);
 
-
-        g1Trips.add(t1);
-        g1Trips.add(t2);
-
-        List<Trip> g2Trips = new ArrayList<>();
-
-        g2 = new Guide(null,"Jon","Doe","Email@gamil.com",11223344, 5, g2Trips );
-        g2Trips.add(t3);
-        g2Trips.add(t4);
-
-        t1 = new Trip(null, start1,end1,"KBH H","Japan",25000, Category.CITY,g1);
-        t2 = new Trip(null, start2,end2,"Billund Lufthavn","Australian",27999, Category.FOREST,g1);
-        t3 = new Trip(null, start3,end3,"Roskilde Lufthavn","Bali",21999, Category.BEACH,g2);
-        t4 = new Trip(null, start4,end4,"KBH H","Gili-T",24999, Category.SEA,g2);
+        // Add trips to guides
+        g1.getTrips().add(t1);
+        g1.getTrips().add(t2);
+        g2.getTrips().add(t3);
+        g2.getTrips().add(t4);
 
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
             em.persist(g1);
             em.persist(g2);
-            em.persist(t1);
-            em.persist(t2);
-            em.persist(t3);
-            em.persist(t4);
             em.getTransaction().commit();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
-            e.printStackTrace(); // Handle exception appropriately
+            e.printStackTrace();
         } finally {
             em.close();
         }
-
-
-
-
-
-
-
-
-
     }
 
 
 
 
+
+
+
+
 }
+
+
+
+
+
