@@ -1,6 +1,7 @@
 package dat.dao;
 
 import dat.dto.TripDTO;
+import dat.entities.Category;
 import dat.entities.Guide;
 import dat.entities.Trip;
 import dat.exceptions.ApiException;
@@ -182,4 +183,48 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
 
         }
     }
+
+
+// -------------------------- TASK 5 Streams - didn't make in time --------------------------
+
+
+    public List<TripDTO> getByTripCategory(Category category){
+
+        try (EntityManager em = emf.createEntityManager()) {
+            // Start the transaction
+            em.getTransaction().begin();
+
+            // Create a query to find doctors by speciality
+            List<Trip> trips = em.createQuery("SELECT t FROM Trip t WHERE t.category = :category", Trip.class)
+                    .setParameter("category", category)
+                    .getResultList();
+
+            List<TripDTO> dtoList = new ArrayList<>();
+
+            for(Trip t : trips){
+                TripDTO dto = new TripDTO(t);
+                dtoList.add(dto);
+
+            }
+
+            // Commit the transaction
+            em.getTransaction().commit();
+
+            return dtoList; // Return the list of doctors found
+        } catch (Exception e) {
+            e.printStackTrace(); // Log the error
+            throw new RuntimeException("Failed to retrieve doctors by speciality: " + e.getMessage());
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
 }

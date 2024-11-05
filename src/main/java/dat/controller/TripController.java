@@ -3,6 +3,7 @@ package dat.controller;
 import dat.config.HibernateConfig;
 import dat.dao.TripDAO;
 import dat.dto.TripDTO;
+import dat.entities.Category;
 import dat.exceptions.ApiException;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
@@ -157,6 +158,29 @@ public class TripController implements IController {
             throw new ApiException(500, "An unexpected error occurred: " + e.getMessage());
         }
     }
+
+    // -------------------------- TASK 5 Streams - didn't make in time  --------------------------
+
+    public void getTripsByCategory(Context ctx){
+        try {
+            String specialityParam = ctx.pathParam("category").toUpperCase();
+            Category category = Category.valueOf(specialityParam); // Convert string to Speciality enum
+            List<TripDTO> trips = dao.getByTripCategory(category);
+
+            if (trips.isEmpty()) {
+                throw new ApiException(404, "No doctors found for speciality: " + specialityParam);
+            }
+
+            ctx.json(trips);
+            ctx.status(200);
+        } catch (IllegalArgumentException e) {
+            throw new ApiException(400, "Invalid speciality provided.");
+        } catch (Exception e) {
+            throw new ApiException(500, "Server error while retrieving doctors by speciality.");
+        }
+    }
+
+
 
     }
 

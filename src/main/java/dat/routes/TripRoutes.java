@@ -27,6 +27,10 @@ public class TripRoutes {
 
             put("/{tripId}/guides/{guideId}", controller::addGuideToTrip); // Add an existing guide to and existing trip.
 
+        ///  ---------------- TASK 5 - didn't make in time -----------------
+
+            get("/category/{category}", controller::getTripsByCategory, Role.ANYONE);
+
 
 
 
