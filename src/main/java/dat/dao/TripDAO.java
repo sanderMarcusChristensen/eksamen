@@ -50,6 +50,8 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
+            /*
+
             // Check if a doctor with the same name already exists
             Trip existingDoctor = em.createQuery("SELECT t FROM Trip t WHERE t.name = :name", Trip.class)
                     .setParameter("name", trip.getName())
@@ -60,6 +62,8 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             if (existingDoctor != null) {
                 throw new ApiException(400, "Trip " + trip.getName() + " already exists.");
             }
+
+             */
 
 
             em.persist(trip);
