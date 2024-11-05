@@ -2,6 +2,7 @@ package dat.security.routes;
 
 import dat.config.ApplicationConfig;
 import dat.config.HibernateConfig;
+import dat.dao.GuideDAO;
 import dat.dao.TripDAO;
 import dat.dto.GuideDTO;
 import dat.dto.TripDTO;
@@ -37,6 +38,7 @@ public class TripRoutes {
     private SecurityPopulatorTester populatorTester = new SecurityPopulatorTester(emf);
     private final static SecurityController securityController = SecurityController.getInstance();
     private final static SecurityDAO securityDAO = new SecurityDAO(emf);
+    private static GuideDAO guideDAO = new GuideDAO(emf);
 
     private TripDTO t1, t2, t3, t4;
     Guide g1 = new Guide(null, "Thor", "Jens", "ThorEmail@gmail.com", 22334455, 1, null);
@@ -70,6 +72,7 @@ public class TripRoutes {
         t1 = dtoList.get(0);
         t2 = dtoList.get(1);
         t3 = dtoList.get(2);
+        t4 = dtoList.get(3);
 
         UserDTO[] users = SecurityPopulatorTester.createTestUser(emf);
         userDTO = users[0];
@@ -112,7 +115,7 @@ public class TripRoutes {
         System.out.println("API Response: " + Arrays.toString(array));
         System.out.println("Expected Trips: " + Arrays.toString(new TripDTO[]{t1, t2, t3, t4}));
 
-       // assertThat(array, arrayContainingInAnyOrder(t1,t2,t3,t4));
+       // assertThat(array, arrayContainingInAnyOrder(t1,t2,t3));
     }
 
     @Test
@@ -144,12 +147,20 @@ public class TripRoutes {
         System.out.println("usertoken: " + userToken);
         System.out.println("admintoken: " + adminToken);
 
-        TripDTO dto = new TripDTO(null, start1, end1, "KBH H", "Japan", 25000, Category.FOREST, g1);
+        List<Trip> trips = new ArrayList<>();
+
+        GuideDTO guide = new GuideDTO(null, "Thor", "Jens", "ThorEmail@gmail.com", 22334455, 1, trips);
+        GuideDTO persistedGuide = guideDAO.create(guide);  // Assuming saveGuide() is implemented in TripDAO
+
+        Guide g = new Guide(persistedGuide);
+
+        TripDTO dto = new TripDTO(null, start1, end1, "KBH H", "Japan", 25000, Category.FOREST,g);
 
         TripDTO created =
                 given()
                         .contentType("application/json")
                         .body(dto)
+                        .header("Authorization", adminToken)
                         .when()
                         .post(BASE_URL)
                         .then()
@@ -164,7 +175,7 @@ public class TripRoutes {
 
 
     @Test
-    @DisplayName("Test get single trip")
+    @DisplayName("Update a trip")
     void testUpdateTrip() {
         t1.setName("USA");
 
@@ -183,6 +194,8 @@ public class TripRoutes {
         assertThat(dto.getName(), equalTo("USA"));
     }
 
+
+// dont work
     @Test
     @DisplayName("Test delete a trip")
     void deleteTrip() {

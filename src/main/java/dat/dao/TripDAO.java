@@ -71,9 +71,6 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
 
             // Return the created DoctorDTO
             return new TripDTO(trip); // Convert entity back to DTO
-        } catch (Exception e) {
-
-            throw new ApiException(500, "something went wrong while creating a trip, error in dao.");
         }
     }
 
