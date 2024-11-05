@@ -46,7 +46,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
     // could add more "security" to this later, right now it only checks on name;
     @Override
     public TripDTO create(TripDTO tripDTO) {
-        Trip trip = new Trip(tripDTO); // Convert DTO to entity
+        Trip trip = new Trip(tripDTO);
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
@@ -69,8 +69,8 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             em.persist(trip);
             em.getTransaction().commit();
 
-            // Return the created DoctorDTO
-            return new TripDTO(trip); // Convert entity back to DTO
+
+            return new TripDTO(trip);
         }
     }
 
