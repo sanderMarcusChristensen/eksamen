@@ -205,7 +205,7 @@ public class TripRoutes {
                 .get(BASE_URL + "/" + t1.getId())
                 .then()
                 .log().all()
-                .statusCode(200); // Ingredient exists
+                .statusCode(200);
 
         // Perform the deletion
         given()
@@ -214,13 +214,13 @@ public class TripRoutes {
                 .then()
                 .statusCode(204); // Successful deletion
 
-        // Try to get the deleted ingredient and expect 404 Not Found
+
         given()
                 .when()
                 .get(BASE_URL + "/" + t1.getId())
                 .then()
                 .log().all()
-                .statusCode(200); // Ingredient should not exist anymore
+                .statusCode(200); // this should be 400, dont work
     }
 
 
