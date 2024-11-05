@@ -59,27 +59,10 @@ public class TripController implements IController {
             TripDTO tripDTO = ctx.bodyAsClass(TripDTO.class);
             TripDTO dto = dao.create(tripDTO);
 
-            if (dto.getName() == null || tripDTO.getName().isEmpty()) {
-                throw new ApiException(400, "trip name is required to create");
-            }
-            if (dto.getEndTime() == null) {
-                throw new ApiException(400, "trip endTime is required to create");
-            }
-            if (dto.getStartTime() == null) {
-                throw new ApiException(400, "trip startTime is required to create");
-            }
-            if (dto.getPrice() == 0) {
-                throw new ApiException(400, "trip price is required to create");
-            }
-            if (dto.getCategory() == null) {
-                throw new ApiException(400, "trip category is required to create");
-            }
-            if (dto.getGuide() == null) {
-                throw new ApiException(400, "trip guide is required to create");
-            }
+            TripDTO checkedDTO = checkPoint(dto);
 
             ctx.res().setStatus(201);
-            ctx.json(dto, TripDTO.class);
+            ctx.json(checkedDTO, TripDTO.class);
 
     }
 
@@ -91,30 +74,10 @@ public class TripController implements IController {
             TripDTO dto = ctx.bodyAsClass(TripDTO.class);
 
             TripDTO updatedDTO = dao.update(id, dto);
+            TripDTO checkedDTO = checkPoint(updatedDTO);
 
-            if (updatedDTO.getName() == null || updatedDTO.getName().isEmpty()) {
-                throw new ApiException(400, "trip name is required to create");
-            }
-            if (updatedDTO.getEndTime() == null) {
-                throw new ApiException(400, "trip endTime is required to create");
-            }
-            if (updatedDTO.getStartTime() == null) {
-                throw new ApiException(400, "trip startTime is required to create");
-            }
-            if (updatedDTO.getPrice() == 0) {
-                throw new ApiException(400, "trip price is required to create");
-            }
-            if (updatedDTO.getCategory() == null) {
-                throw new ApiException(400, "trip category is required to create");
-            }
-            if (updatedDTO.getGuide() == null) {
-                throw new ApiException(400, "trip guide is required to create");
-            }
-
-            if (updatedDTO != null) {
-                ctx.json(updatedDTO);  // Return the updated doctor data as JSON
-                ctx.status(200);
-            }
+            ctx.json(checkedDTO);
+            ctx.status(200);
 
         } catch (Exception e) {
             throw new ApiException(500,"Something went wrong trying to update the trip");
@@ -129,7 +92,7 @@ public class TripController implements IController {
 
             Long id = Long.parseLong(ctx.pathParam("id"));
 
-            if(id == null || id == 0){
+            if(id == 0){
                 throw new ApiException(400,"id can't not be null");
             }
             dao.getById(id);
@@ -181,39 +144,39 @@ public class TripController implements IController {
     }
 
 
+    public TripDTO checkPoint ( TripDTO toCheck ){
 
-    }
-
-
-
-    /*
-
-    public void daoReturnCheck(Context ctx){
-
-        TripDTO tripDTO = ctx.bodyAsClass(TripDTO.class);
-        TripDTO dto = dao.create(tripDTO);
-
-        if (dto.getName() == null || tripDTO.getName().isEmpty()) {
+        if (toCheck.getName() == null || toCheck.getName().isEmpty()) {
             throw new ApiException(400, "trip name is required to create");
         }
-        if (dto.getEndTime() == null) {
+        if (toCheck.getEndTime() == null) {
             throw new ApiException(400, "trip endTime is required to create");
         }
-        if (dto.getStartTime() == null) {
+        if (toCheck.getStartTime() == null) {
             throw new ApiException(400, "trip startTime is required to create");
         }
-        if (dto.getPrice() == 0) {
+        if (toCheck.getPrice() == 0) {
             throw new ApiException(400, "trip price is required to create");
         }
-        if (dto.getCategory() == null) {
+        if (toCheck.getCategory() == null) {
             throw new ApiException(400, "trip category is required to create");
         }
-        if (dto.getGuide() == null) {
+        if (toCheck.getGuide() == null) {
             throw new ApiException(400, "trip guide is required to create");
         }
+
+        return toCheck;
+
+
     }
 
-     */
+
+
+    }
+
+
+
+
 
 
 

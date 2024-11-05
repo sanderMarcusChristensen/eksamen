@@ -53,7 +53,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
 
             /*
 
-            // Check if a doctor with the same name already exists
+
             Trip existingDoctor = em.createQuery("SELECT t FROM Trip t WHERE t.name = :name", Trip.class)
                     .setParameter("name", trip.getName())
                     .getResultStream()
