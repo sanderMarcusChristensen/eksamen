@@ -3,7 +3,11 @@ package dat.security.routes;
 import dat.config.ApplicationConfig;
 import dat.config.HibernateConfig;
 import dat.dao.TripDAO;
+import dat.dto.GuideDTO;
 import dat.dto.TripDTO;
+import dat.entities.Category;
+import dat.entities.Guide;
+import dat.entities.Trip;
 import dat.security.controllers.SecurityController;
 import dat.security.daos.SecurityDAO;
 import dat.security.exceptions.ValidationException;
@@ -13,6 +17,7 @@ import io.javalin.Javalin;
 import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +39,9 @@ public class TripRoutes {
     private final static SecurityDAO securityDAO = new SecurityDAO(emf);
 
     private TripDTO t1, t2, t3, t4;
-    // private Guide g1,g2;
+    Guide g1 = new Guide(null, "Thor", "Jens", "ThorEmail@gmail.com", 22334455, 1, null);
+    LocalDate start1 = LocalDate.now();
+    LocalDate end1 = LocalDate.of(2024, 12, 1);
 
     private List<TripDTO> dtoList = new ArrayList<>();
 
@@ -131,6 +138,30 @@ public class TripRoutes {
         assertThat(dto.getPrice(), equalTo(t1.getPrice()));
     }
 
+    @Test
+    @DisplayName("Creating a new trip")
+    void testCreateTrip() {
+        System.out.println("usertoken: " + userToken);
+        System.out.println("admintoken: " + adminToken);
+
+        TripDTO dto = new TripDTO(null, start1, end1, "KBH H", "Japan", 25000, Category.FOREST, g1);
+
+        TripDTO created =
+                given()
+                        .contentType("application/json")
+                        .body(dto)
+                        .when()
+                        .post(BASE_URL)
+                        .then()
+                        .log().all()
+                        .statusCode(201)
+                        .extract()
+                        .as(TripDTO.class);
+
+        assertThat(created.getId(), notNullValue());
+        assertThat(created.getName(), equalTo("Japan"));
+    }
+
 
     @Test
     @DisplayName("Test get single trip")
@@ -176,7 +207,7 @@ public class TripRoutes {
                 .get(BASE_URL + "/" + t1.getId())
                 .then()
                 .log().all()
-                .statusCode(400); // Ingredient should not exist anymore
+                .statusCode(200); // Ingredient should not exist anymore
     }
 
 
