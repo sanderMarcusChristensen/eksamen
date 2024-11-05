@@ -19,7 +19,7 @@ public class TripRoutes {
         return () -> {
 
             //CRUD
-            get("/", controller::getAll, Role.ANYONE);   // Only users can see all od them
+            get("/", controller::getAll, Role.USER);   // Only users can see all od them
             get("/{id}", controller::getById, Role.ANYONE, Role.ANYONE);
             post("/", controller::create, Role.ANYONE );
             put("/{id}", controller::update,Role.ANYONE); // only admins can update

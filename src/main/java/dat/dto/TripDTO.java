@@ -4,8 +4,10 @@ import dat.entities.Category;
 import dat.entities.Guide;
 import dat.entities.Trip;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Data
 
@@ -17,6 +19,7 @@ public class TripDTO {
     private String name;
     private int price;
     private Category category;
+    @ToString.Exclude
     private Guide guide;
 
     // Default constructor
@@ -45,5 +48,31 @@ public class TripDTO {
         this.price = trip.getPrice();
         this.category = trip.getCategory();
         this.guide = trip.getGuide();
+    }
+
+    @Override
+    public String toString() {
+        return "Trip{" +
+                "id=" + id +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", startPosition='" + startPosition + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", category=" + category +
+                // Avoid printing guide to prevent recursive calls
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TripDTO tripDTO)) return false;
+        return price == tripDTO.price && Objects.equals(id, tripDTO.id) && Objects.equals(startTime, tripDTO.startTime) && Objects.equals(endTime, tripDTO.endTime) && Objects.equals(startPosition, tripDTO.startPosition) && Objects.equals(name, tripDTO.name) && category == tripDTO.category && Objects.equals(guide, tripDTO.guide);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, startTime, endTime, startPosition, name, price, category, guide);
     }
 }

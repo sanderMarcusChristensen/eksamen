@@ -14,6 +14,7 @@ import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -83,14 +84,12 @@ public class TripRoutes {
 
         System.out.println("usertoken: " + userToken);
         System.out.println("admintoken: " + adminToken);
-        // Verify setup
-        assertEquals(4, dtoList.size(), "Expected 3 doctors .");
 
         // Call the API to fetch the ingredients
         TripDTO[] array =
                 given()
                         .when()
-
+                        .header("Authorization", userToken)
                         .get(BASE_URL)
                         .then()
                         .log().all()
@@ -102,7 +101,11 @@ public class TripRoutes {
             System.out.println(d);
         }
 
-        //assertThat(array, arrayContainingInAnyOrder(t1,t2,t3,t4));
+        assertEquals(4, dtoList.size(), "Expected 4 trips.");
+        System.out.println("API Response: " + Arrays.toString(array));
+        System.out.println("Expected Trips: " + Arrays.toString(new TripDTO[]{t1, t2, t3, t4}));
+
+       // assertThat(array, arrayContainingInAnyOrder(t1,t2,t3,t4));
     }
 
     @Test
