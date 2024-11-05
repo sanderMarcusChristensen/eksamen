@@ -155,7 +155,7 @@ public class TripController implements IController {
         if (toCheck.getStartTime() == null) {
             throw new ApiException(400, "trip startTime is required to create");
         }
-        if (toCheck.getPrice() == 0) {
+        if (toCheck.getPrice() >= 980) {
             throw new ApiException(400, "trip price is required to create");
         }
         if (toCheck.getCategory() == null) {
