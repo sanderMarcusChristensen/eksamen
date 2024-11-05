@@ -61,7 +61,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
                 throw new ApiException(400, "Trip " + trip.getName() + " already exists.");
             }
 
-            // Persist the new doctor
+
             em.persist(trip);
             em.getTransaction().commit();
 

@@ -1,6 +1,9 @@
 package dat.security.routes;
 
 import dat.config.HibernateConfig;
+import dat.dao.GuideDAO;
+import dat.dao.TripDAO;
+import dat.dto.GuideDTO;
 import dat.dto.TripDTO;
 import dat.entities.Category;
 import dat.entities.Guide;
@@ -25,9 +28,13 @@ public class SecurityPopulatorTester {
 
 
     private static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryForTest();
+    TripDAO tripDAOdao = new TripDAO(emf);
+    GuideDAO guideDAO = new GuideDAO(emf);
 
-    private TripDTO t1,t2,t3,t4;
+    private Trip t1,t2,t3,t4;
     private Guide g1,g2;
+
+
     LocalDate start1,start2,start3,start4;
     LocalDate end1,end2,end3,end4;
 
@@ -76,7 +83,6 @@ public class SecurityPopulatorTester {
     }
 
     public List<TripDTO> populate() {
-        /*
 
         start1 = LocalDate.now();
         start2 = LocalDate.of(2024, 11, 16);
@@ -92,44 +98,23 @@ public class SecurityPopulatorTester {
         g1 = new Guide(null, "Sander", "Christensen", "Email@gmail.com", 55667788, 3, new ArrayList<>());
         g2 = new Guide(null, "Jon", "Doe", "Email@gmail.com", 11223344, 5, new ArrayList<>());
 
-         */
-
-        List<TripDTO> list = new ArrayList<>();
-
         // Initialize Trip
-        t1 = new TripDTO(1L, start1, end1, "KBH H", "Japan", 25000, Category.CITY, g1);
-        t2 = new TripDTO(2L, start2, end2, "Billund Lufthavn", "Australian", 27999, Category.FOREST, g1);
-        t3 = new TripDTO(3L, start3, end3, "Roskilde Lufthavn", "Bali", 21999, Category.BEACH, g2);
-        t4 = new TripDTO(4L, start4, end4, "KBH H", "Gili-T", 24999, Category.SEA, g2);
-
-        list.add(t1);
-        list.add(t2);
-        list.add(t3);
-        list.add(t4);
-
-        Trip savedTrip1 = new Trip(t1);
-        Trip savedTrip2 = new Trip(t2);
-        Trip savedTrip3 = new Trip(t3);
-        Trip savedTrip4 = new Trip(t4);
-
-
+        t1 = new Trip(null, start1, end1, "KBH H", "Japan", 25000, Category.CITY, g1);
+        t2 = new Trip(null, start2, end2, "Billund Lufthavn", "Australian", 27999, Category.FOREST, g1);
+        t3 = new Trip(null, start3, end3, "Roskilde Lufthavn", "Bali", 21999, Category.BEACH, g2);
+        t4 = new Trip(null, start4, end4, "KBH H", "Gili-T", 24999, Category.SEA, g2);
 
         // Add trips to guides
-       // g1.getTrips().add(t1);
-       // g1.getTrips().add(t2);
-       // g2.getTrips().add(t3);
-       // g2.getTrips().add(t4);
-
+        g1.getTrips().add(t1);
+        g1.getTrips().add(t2);
+        g2.getTrips().add(t3);
+        g2.getTrips().add(t4);
 
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
-            //em.persist(g1);
-            //em.persist(g2);
-            em.persist(savedTrip1);
-            em.persist(savedTrip2);
-            em.persist(savedTrip3);
-            em.persist(savedTrip4);
+            em.persist(g1);
+            em.persist(g2);
             em.getTransaction().commit();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
@@ -140,8 +125,24 @@ public class SecurityPopulatorTester {
             em.close();
         }
 
+        List<TripDTO> list = new ArrayList<>();
+
+        TripDTO dto1 = new TripDTO(t1);
+        TripDTO dto2 = new TripDTO(t2);
+        TripDTO dto3 = new TripDTO(t3);
+        TripDTO dto4 = new TripDTO(t4);
+
+        list.add(dto1);
+        list.add(dto2);
+        list.add(dto3);
+        list.add(dto4);
+
         return list;
     }
+
+
+
+
 
 
 }

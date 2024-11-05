@@ -1,5 +1,6 @@
 package dat.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dat.entities.Guide;
 import dat.entities.Trip;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
+
 public class GuideDTO {
 
     private Long id;
