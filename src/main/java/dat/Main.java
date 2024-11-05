@@ -17,6 +17,6 @@ public class Main {
         populator.populate();
 
 
-        // sæt hibernate til når du laver routes og dao
+
     }
 }

@@ -28,7 +28,7 @@ public class Guide {
     private int yearsOfExperience;
 
     // One-to-Many relationship with Trip
-    @OneToMany(mappedBy = "guide", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "guide", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @ToString.Exclude
     private List<Trip> trips = new ArrayList<>();
     /*
