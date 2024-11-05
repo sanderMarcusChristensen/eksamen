@@ -150,7 +150,7 @@ public class TripRoutes {
         List<Trip> trips = new ArrayList<>();
 
         GuideDTO guide = new GuideDTO(null, "Thor", "Jens", "ThorEmail@gmail.com", 22334455, 1, trips);
-        GuideDTO persistedGuide = guideDAO.create(guide);  // Assuming saveGuide() is implemented in TripDAO
+        GuideDTO persistedGuide = guideDAO.create(guide);
 
         Guide g = new Guide(persistedGuide);
 
