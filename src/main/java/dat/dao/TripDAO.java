@@ -123,9 +123,17 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             em.getTransaction().begin();
 
             Trip trip = em.find(Trip.class, id);
-            if (trip != null) {
-                em.remove(trip);
+
+            List<Guide> guides = em.createQuery("SELECT g FROM Guide g JOIN g.trips t WHERE t.id = :tripId", Guide.class)
+                    .setParameter("tripId", id)
+                    .getResultList();
+
+            for (Guide g : guides) {
+                g.getTrips().remove(trip);
+                em.merge(g);
             }
+
+            em.remove(trip);
             em.getTransaction().commit();
         }
 
