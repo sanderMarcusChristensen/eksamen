@@ -35,20 +35,6 @@ public class Trip {
     @JoinColumn(name = "guide_id", nullable = false)
     private Guide guide;
 
-    /*
-
-    public Trip(Long id, LocalDate startTime, LocalDate endTime, String startPosition, String name, int price, Category category){
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.startPosition = startPosition;
-        this.name = name;
-        this.price = price;
-        this.category = category;
-        this.id = id;
-
-    }
-
-     */
 
     public Trip(Long id, LocalDate startTime, LocalDate endTime, String startPosition, String name, int price, Category category, Guide guide){
         this.startTime = startTime;
@@ -72,6 +58,23 @@ public class Trip {
         this.guide = dto.getGuide();
 
     }
+
+    // ------------ What i would have done ------------
+/*
+    public Trip(TripDTO dto) {
+        this.startTime = dto.getStartTime();
+        this.endTime = dto.getEndTime();
+        this.startPosition = dto.getStartPosition();
+        this.name = dto.getName();
+        this.price = dto.getPrice();
+        this.category = dto.getCategory();
+
+        if (dto.getGuide() != null) {
+            this.guide = new Guide(dto.getGuide());
+        }
+
+    }
+     */
 
     @Override
     public String toString() {

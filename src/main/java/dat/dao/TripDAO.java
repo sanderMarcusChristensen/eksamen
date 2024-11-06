@@ -23,35 +23,37 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
     }
 
     @Override
-    public TripDTO getById(Long id) {
+    public TripDTO getById(Long id) {                           //Task a id in
         try (EntityManager em = emf.createEntityManager()) {
-            Trip trip = em.find(Trip.class, id);
-            return trip != null ? new TripDTO(trip) : null;
+            Trip trip = em.find(Trip.class, id);                // Uses em.find search for the Trip with that id
+            return trip != null ? new TripDTO(trip) : null;     // Returns if not null
         }
     }
 
     @Override
     public List<TripDTO> getAll() {
         try (EntityManager em = emf.createEntityManager()) {
-            TypedQuery<Trip> query = em.createQuery("SELECT t FROM Trip t", Trip.class);
+            TypedQuery<Trip> query = em.createQuery("SELECT t FROM Trip t", Trip.class);    // Finds all trips entity's in database
 
-            List<Trip> tripList = query.getResultList();
+            List<Trip> tripList = query.getResultList();    // Safes them to a list
             List<TripDTO> tripDTOList = new ArrayList<>();
-            for (Trip t : tripList) {
-                tripDTOList.add(new TripDTO(t));
+            for (Trip t : tripList) {                       // Loops over the list to convert to DTO
+                tripDTOList.add(new TripDTO(t));    // Adds them
             }
-            return tripDTOList;
+            return tripDTOList; // Returns to list
         }
     }
 
     // could add more "security" to this later, right now it only checks on name;
     @Override
     public TripDTO create(TripDTO tripDTO) {
-        Trip trip = new Trip(tripDTO);
+        Trip trip = new Trip(tripDTO);                          // Convert the DTO to entity
         try (EntityManager em = emf.createEntityManager()) {
-            em.getTransaction().begin();
+            em.getTransaction().begin();                        // Tasks the DTO it gets from the parameter
 
             /*
+
+                                                             // Error on name-check before persisting it into database
 
 
             Trip existingDoctor = em.createQuery("SELECT t FROM Trip t WHERE t.name = :name", Trip.class)
@@ -67,11 +69,11 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
              */
 
 
-            em.persist(trip);
+            em.persist(trip);                                   // Persist it into the database
             em.getTransaction().commit();
 
 
-            return new TripDTO(trip);
+            return new TripDTO(trip);                       // Convert the entity to DTO and returns it
         }
     }
 
@@ -80,17 +82,17 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            Trip exsitingTrip = em.find(Trip.class, id);
+            Trip exsitingTrip = em.find(Trip.class, id);        // Uses em.find search for the Trip with that id
 
             if (exsitingTrip == null) {
                 em.getTransaction().rollback();
-                return null;
+                return null;                                    // If there isn't a trip with that id, returns null
             }
 
-            if (tripDTO.getName() != null) {
+            if (tripDTO.getName() != null) {                    // Making sure nothing is null
                 exsitingTrip.setName(tripDTO.getName());
             }
-            if (tripDTO.getId() != null) {
+            if (tripDTO.getId() != null) {                      // Updating by setting the new data on the old data
                 exsitingTrip.setId(tripDTO.getId());
             }
             if (tripDTO.getEndTime() != null) {
@@ -110,8 +112,8 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             }
 
             em.getTransaction().commit();
-            //assert exsitingTrip != null;
-            return new TripDTO(exsitingTrip);
+
+            return new TripDTO(exsitingTrip);       // Returns the updated in DTO form
         } catch (Exception e) {
             throw new ApiException(500, "something went wrong while updating the doctor.");
 
@@ -124,15 +126,15 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            Trip trip = em.find(Trip.class, id);
+            Trip trip = em.find(Trip.class, id);    // Uses em.find search for the Trip with that id
 
             List<Guide> guides = em.createQuery("SELECT g FROM Guide g JOIN g.trips t WHERE t.id = :tripId", Guide.class)
                     .setParameter("tripId", id)
-                    .getResultList();
+                    .getResultList();                 // Query selects all Guide entities that are associated with the Trip
 
             for (Guide g : guides) {
-                g.getTrips().remove(trip);
-                em.merge(g);
+                g.getTrips().remove(trip);  // Removes the trip from the guide's trips list
+                em.merge(g);                // Persist the updated guide with the trip removed
             }
 
             em.remove(trip);
@@ -141,45 +143,50 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
 
     }
 
+    // Adds a guide to a trip
+    // tripId = What trip you want to add
+    // guideId = What guide you want to add the trip to
+
     @Override
     public void addGuideToTrip(int tripId, int guideId) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            Trip trip = em.find(Trip.class, tripId);    // could just be the "getById" method
+            Trip trip = em.find(Trip.class, tripId);         // Uses em.find search for the Trip with that id
 
             if (trip == null) {
                 throw new ApiException(400, "Trip " + tripId + " does not exist.");
             }
-            Guide guide = em.find(Guide.class, guideId);
+            Guide guide = em.find(Guide.class, guideId);    // Uses em.find search for the Guide with that id
 
             if (guide == null) {
                 throw new ApiException(400, "Guide " + guideId + " does not exist.");
             }
 
-            trip.setGuide(guide);
+            trip.setGuide(guide);                           // Sets the guide id on that trip
             em.getTransaction().commit();
         }
 
     }
 
+
     @Override
     public List<TripDTO> getTripsByGuide(int guideId) {
         try (EntityManager em = emf.createEntityManager()) {
 
-            Guide guide = em.find(Guide.class, guideId);
+            Guide guide = em.find(Guide.class, guideId);   // Uses em.find search for the Guide with that id
 
             if (guide == null) {
                 throw new ApiException(400, "Guide " + guideId + " does not exist.");
             }
 
-           List<Trip> trips = guide.getTrips();
-            List<TripDTO> tripDTOList = new ArrayList<>();
+            List<Trip> trips = guide.getTrips();
+            List<TripDTO> tripDTOList = new ArrayList<>();  // Loops over the guides list of trips
             for (Trip t : trips) {
-                tripDTOList.add(new TripDTO(t));
+                tripDTOList.add(new TripDTO(t));        // Adds and converts them to DTO list
             }
 
-            return tripDTOList;
+            return tripDTOList;                         // returns that list.
 
         }
     }
@@ -188,43 +195,35 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
 // -------------------------- TASK 5 Streams - didn't make in time --------------------------
 
 
-    public List<TripDTO> getByTripCategory(Category category){
+    public List<TripDTO> getByTripCategory(Category category) {
 
         try (EntityManager em = emf.createEntityManager()) {
-            // Start the transaction
             em.getTransaction().begin();
 
-            // Create a query to find doctors by speciality
+                                                         // Create a query to find trips by category
             List<Trip> trips = em.createQuery("SELECT t FROM Trip t WHERE t.category = :category", Trip.class)
                     .setParameter("category", category)
                     .getResultList();
 
             List<TripDTO> dtoList = new ArrayList<>();
 
-            for(Trip t : trips){
-                TripDTO dto = new TripDTO(t);
+            for (Trip t : trips) {
+                TripDTO dto = new TripDTO(t);   // Convert to DTo form entity
                 dtoList.add(dto);
 
             }
 
-            // Commit the transaction
+                                                // Commit the transaction
             em.getTransaction().commit();
 
-            return dtoList; // Return the list of doctors found
+            return dtoList; // Return the list
         } catch (Exception e) {
             e.printStackTrace(); // Log the error
             throw new RuntimeException("Failed to retrieve doctors by speciality: " + e.getMessage());
         }
 
 
-
-
     }
-
-
-
-
-
 
 
 }

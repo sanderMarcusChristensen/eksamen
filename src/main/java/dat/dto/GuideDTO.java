@@ -20,7 +20,7 @@ public class GuideDTO {
     private int phone;
     private int yearsOfExperience;
     @ToString.Exclude
-    private List<Trip> trips;
+    private List<Trip> trips;   // Needs to be List<TripDTO> trips
 
     public GuideDTO(Long id, String firstName, String lastName, String email, int phone, int yearsOfExperience, List<Trip> trips) {
         this.id = id;
@@ -50,6 +50,25 @@ public class GuideDTO {
         this.yearsOfExperience = guide.getYearsOfExperience();
         this.trips = guide.getTrips();
     }
+
+    // ------------ What i would have done ------------
+
+    /*
+    public GuideDTO(Guide guide){
+        this.id = guide.getId();
+        this.firstName = guide.getFirstName();
+        this.lastName = guide.getLastName();
+        this.email = guide.getEmail();
+        this.phone = guide.getPhone();
+        this.yearsOfExperience = guide.getYearsOfExperience();
+
+        if (guide.getTrips()!= null) {
+            this.trips = guide.getTrips().stream()
+                    .map(TripDTO::new)
+                    .collect(Collectors.toList());
+        }
+    }
+     */
 
     @Override
     public String toString() {

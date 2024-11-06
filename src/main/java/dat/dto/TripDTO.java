@@ -20,7 +20,7 @@ public class TripDTO {
     private int price;
     private Category category;
     @ToString.Exclude
-    private Guide guide;
+    private Guide guide;    // Needs to be GuideDTO guide
 
     // Default constructor
     public TripDTO() {
@@ -49,6 +49,23 @@ public class TripDTO {
         this.category = trip.getCategory();
         this.guide = trip.getGuide();
     }
+
+    // ------------ What i would have done ------------
+
+    /*
+   public TripDTO(Trip trip) {
+        this.id = trip.getId();
+        this.startTime = trip.getStartTime();
+        this.endTime = trip.getEndTime();
+        this.startPosition = trip.getStartPosition();
+        this.name = trip.getName();
+        this.price = trip.getPrice();
+        this.category = trip.getCategory();
+
+        if (trip.getGuide() != null) {
+            this.guide = new GuideDTO(trip.getGuide());
+        }
+     */
 
     @Override
     public String toString() {
