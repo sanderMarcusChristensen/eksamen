@@ -196,7 +196,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            // Create a query to find trips by category
+                                                            // Create a query to find trips by category
             List<Trip> trips = em.createQuery("SELECT t FROM Trip t WHERE t.category = :category", Trip.class)
                     .setParameter("category", category)
                     .getResultList();
@@ -204,7 +204,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             List<TripDTO> dtoList = new ArrayList<>();
 
             for (Trip t : trips) {
-                TripDTO dto = new TripDTO(t);   // Convert to DTo form entity
+                TripDTO dto = new TripDTO(t);                // Convert to DTo form entity
                 dtoList.add(dto);
 
             }
@@ -212,10 +212,10 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             // Commit the transaction
             em.getTransaction().commit();
 
-            return dtoList; // Return the list
+            return dtoList;                     // Return the list
         } catch (Exception e) {
-            e.printStackTrace(); // Log the error
-            throw new RuntimeException("Failed to retrieve doctors by speciality: " + e.getMessage());
+            e.printStackTrace();                    // Log the error
+            throw new ApiException(500,"something went wrong while retrieving trips by trip category.");
         }
 
 
