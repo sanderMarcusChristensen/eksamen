@@ -12,36 +12,35 @@ import java.util.List;
 
 public class TripController implements IController {
 
-    private final TripDAO dao;
+    private final TripDAO dao;      // I need methods from dao to create and update fx
 
-    public TripController(TripDAO dao) {
+    public TripController(TripDAO dao) {    // My controller needs to know what dao it's working with
         EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
-        this.dao = new TripDAO(emf);
-
+        this.dao = new TripDAO(emf);    // My DAO needs to know what database its getting data to and from
 
     }
 
     @Override
     public void getAll(Context ctx) {
 
-            List<TripDTO> trips = dao.getAll();
+            List<TripDTO> trips = dao.getAll();     // Calls the getall in dao and get's the list
 
             if (trips.isEmpty()) {
-                throw new ApiException(404, "Trips not found in list");
+                throw new ApiException(404, "Trips not found in list"); // If no trips is in the list
             }
-            ctx.json(trips);
-            ctx.status(200);
+            ctx.json(trips);    // Puts it out as Json
+            ctx.status(200);    // Sends out status-code 200 for "everything good"
     }
 
     @Override
     public void getById(Context ctx) {
 
         try {
-            Long id = Long.parseLong(ctx.pathParam("id"));
-            TripDTO dto = dao.getById(id);
+            Long id = Long.parseLong(ctx.pathParam("id"));      // Takes whatever id is put into the request
+            TripDTO dto = dao.getById(id);                      // Takes the id into the dao - method getByid
             if (dto != null) {
-                ctx.json(dto);
-                ctx.status(200);
+                ctx.json(dto);    // Puts it out as Json
+                ctx.status(200);   // Sends out status-code 200 for "everything good"
             } else {
                 throw new ApiException(400, "Failed to get trips");
             }
