@@ -34,7 +34,7 @@ public class Guide {
 
     //cascade = CascadeType.ALL removes everything when deleted
     //orphanRemoval = true only removes the deleted part and orphaned the other
-
+    //fetch = FetchType.EAGER = related entities will be loaded immediately
 
     public Guide(Long id, String firstName, String lastName, String email, int phone, int yearsOfExperience, List<Trip> trips) {
         this.firstName = firstName;
