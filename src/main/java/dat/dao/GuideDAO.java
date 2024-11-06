@@ -21,33 +21,33 @@ public class GuideDAO implements IDAO<GuideDTO, Long>{
     }
 
     @Override
-    public GuideDTO getById(Long id) {
+    public GuideDTO getById(Long id) {                              //Task a id in
         try (EntityManager em = emf.createEntityManager()) {
-            Guide guide = em.find(Guide.class, id);
-            return guide != null ? new GuideDTO(guide) : null;
+            Guide guide = em.find(Guide.class, id);                 // Uses em.find search for the Trip with that id
+            return guide != null ? new GuideDTO(guide) : null;      // Returns if not null
         }
     }
 
     @Override
-    public List<GuideDTO> getAll() {
+    public List<GuideDTO> getAll() {                            // Finds all trips entity's in database
         try (EntityManager em = emf.createEntityManager()) {
             TypedQuery<Guide> query = em.createQuery("SELECT g FROM Guide g", Guide.class);
-            List<Guide> guideList = query.getResultList();
+            List<Guide> guideList = query.getResultList();       // Safes them to a list
             List<GuideDTO> guideDTOList = new ArrayList<>();
-            for (Guide g : guideList) {
-                guideDTOList.add(new GuideDTO(g));
+            for (Guide g : guideList) {                         // Loops over the list to convert to DTO
+                guideDTOList.add(new GuideDTO(g));              // Adds them
             }
-            return guideDTOList;
+            return guideDTOList;                                // Retuens it
         }
     }
 
     @Override
     public GuideDTO create(GuideDTO guideDTO) {
-            Guide guide = new Guide(guideDTO); // Convert DTO to entity
+            Guide guide = new Guide(guideDTO);                          // Convert DTO to entity
             try (EntityManager em = emf.createEntityManager()) {
                 em.getTransaction().begin();
 
-                // Check if a doctor with the same name already exists
+                                                                     // Check if a Guide with the same name already exists
                 Guide existingDoctor = em.createQuery("SELECT g FROM Guide g WHERE g.firstName = :name", Guide.class)
                         .setParameter("name", guide.getFirstName())
                         .getResultStream()
@@ -58,12 +58,12 @@ public class GuideDAO implements IDAO<GuideDTO, Long>{
                     throw new ApiException(400, "Guild " + guide.getFirstName() + " already exists.");
                 }
 
-                // Persist the new doctor
+                                                                    // Persist the new guide
                 em.persist(guide);
                 em.getTransaction().commit();
 
-                // Return the created DoctorDTO
-                return new GuideDTO(guide); // Convert entity back to DTO
+                                                                    // Return the created GuideDTO
+                return new GuideDTO(guide);                         // Convert entity back to DTO
             } catch (Exception e) {
 
                 throw new ApiException(500, "something went wrong while creating a guide.");
@@ -75,15 +75,15 @@ public class GuideDAO implements IDAO<GuideDTO, Long>{
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            Guide guide = em.find(Guide.class, id);
+            Guide guide = em.find(Guide.class, id);     // Uses em.find search for the Guide with that id
             if(guide == null) {
-                em.getTransaction().rollback();
+                em.getTransaction().rollback();          // If there isn't a trip with that id, returns null
                 return null;
             }
-            if(guide.getFirstName() != null) {
+            if(guide.getFirstName() != null) {          // Making sure nothing is null
                 guide.setFirstName(guideDTO.getFirstName());
             }
-            if(guide.getLastName() != null) {
+            if(guide.getLastName() != null) {             // Updating by setting the new data on the old data
                 guide.setLastName(guideDTO.getLastName());
             }
             if(guide.getEmail() != null){
@@ -93,10 +93,9 @@ public class GuideDAO implements IDAO<GuideDTO, Long>{
                 guide.setPhone(guideDTO.getPhone());
             }
 
-            // needs a check on the trips on the guide
             em.merge(guide);
             em.getTransaction().commit();
-            return new GuideDTO(guide);
+            return new GuideDTO(guide);       // Returns the updated in DTO form
 
         } catch (Exception e) {
             throw new ApiException(500, "something went wrong while updating a guide");
@@ -110,13 +109,12 @@ public class GuideDAO implements IDAO<GuideDTO, Long>{
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            Guide guide = em.find(Guide.class, id);
+            Guide guide = em.find(Guide.class, id);         // Uses em.find search for the Guide with that id
             if (guide != null) {
-                // Clear ingredients associations to delete join table entries
-                guide.getTrips().clear();
-                em.remove(guide);
+                guide.getTrips().clear();                   // Deletes the list of Trip from that Guide / or clears the list
+                em.remove(guide);                           // Removes guide
             }
-            em.getTransaction().commit();
+            em.getTransaction().commit();                   // Commit changes
         }
 
     }

@@ -2,6 +2,7 @@ package dat.dao;
 
 import java.util.List;
 
+                    //Generics
 public interface IDAO<T, I> {
 
     T getById(I i);
@@ -13,6 +14,8 @@ public interface IDAO<T, I> {
     T update(I i, T t);
 
     void delete(I i);
+
+    //Generics = Reusability and Flexibility
 
 
 }

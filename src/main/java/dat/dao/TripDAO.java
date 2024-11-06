@@ -49,13 +49,10 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
     public TripDTO create(TripDTO tripDTO) {
         Trip trip = new Trip(tripDTO);                          // Convert the DTO to entity
         try (EntityManager em = emf.createEntityManager()) {
-            em.getTransaction().begin();                        // Tasks the DTO it gets from the parameter
+            em.getTransaction().begin();
 
             /*
-
-                                                             // Error on name-check before persisting it into database
-
-
+                                                    // Error on name-check before persisting it into database
             Trip existingDoctor = em.createQuery("SELECT t FROM Trip t WHERE t.name = :name", Trip.class)
                     .setParameter("name", trip.getName())
                     .getResultStream()
@@ -67,7 +64,6 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
             }
 
              */
-
 
             em.persist(trip);                                   // Persist it into the database
             em.getTransaction().commit();
@@ -200,7 +196,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-                                                         // Create a query to find trips by category
+            // Create a query to find trips by category
             List<Trip> trips = em.createQuery("SELECT t FROM Trip t WHERE t.category = :category", Trip.class)
                     .setParameter("category", category)
                     .getResultList();
@@ -213,7 +209,7 @@ public class TripDAO implements IDAO<TripDTO, Long>, ITripGuideDAO {
 
             }
 
-                                                // Commit the transaction
+            // Commit the transaction
             em.getTransaction().commit();
 
             return dtoList; // Return the list
